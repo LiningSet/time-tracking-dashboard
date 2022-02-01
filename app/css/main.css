@@ -1,0 +1,324 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #0f1424;
+  min-height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4rem 0;
+}
+
+html {
+  font-family: "Rubik", sans-serif;
+}
+
+main {
+  width: 90%;
+  max-width: 1000px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-rows: minmax(10rem, auto);
+  gap: 1rem;
+}
+
+.slot {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slot .slot-sticker {
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  pointer-events: none;
+}
+
+.slot .slot-inner {
+  padding: 1.5rem;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  height: calc(80% + 0.25rem);
+  width: 100%;
+  background: #1c1f4a;
+  border-radius: inherit;
+  color: #bdc1ff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.slot .slot-inner:hover {
+  background: #252961;
+}
+
+.slot .top-flex,
+.slot .bottom-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.slot .top-flex.top-flex img,
+.slot .bottom-flex.top-flex img {
+  display: block;
+  padding: 5px;
+  color: #fff;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.slot .top-flex.top-flex img:hover,
+.slot .bottom-flex.top-flex img:hover {
+  -webkit-filter: contrast(2);
+          filter: contrast(2);
+}
+
+.slot .top-flex.bottom-flex h2,
+.slot .bottom-flex.bottom-flex h2 {
+  color: #fff;
+  font-weight: 300;
+}
+
+.slot .subject {
+  color: #fff;
+  font-weight: 500;
+}
+
+.about {
+  background: #1c1f4a;
+  border-radius: 1rem;
+}
+
+.about .about__intro {
+  background: #5847eb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  padding: 1.5rem;
+  border-radius: inherit;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.about .about__intro span {
+  color: #bdc1ff;
+}
+
+.about .about__intro h1 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.about ul.about__switch-time {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem;
+  color: #6f76c8;
+  font-weight: 400;
+}
+
+.about ul.about__switch-time li {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+.about ul.about__switch-time li:hover {
+  color: #fff;
+}
+
+.about ul.about__switch-time .active {
+  color: #fff;
+}
+
+.about .about-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 50%;
+  background: #fff;
+  padding: 0.25rem;
+  width: 30%;
+}
+
+.about .about-img img {
+  width: 100%;
+}
+
+.about .about-title {
+  width: 70%;
+}
+
+.work {
+  background: #ff8c66;
+}
+
+.play {
+  background: #56c2e6;
+}
+
+.study {
+  background: #ff5c7c;
+}
+
+.exercise {
+  background: #4acf81;
+}
+
+.social {
+  background: #7536d3;
+}
+
+.self-care {
+  background: #f1c65b;
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+  main {
+        grid-template-areas: "about work play study" "about exercise social self-care";
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .about {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: about;
+  }
+  .about .about__intro {
+    height: 65%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .about .about__intro h1 {
+    font-size: 2rem;
+  }
+  .about ul.about__switch-time {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .slot {
+    aspect-ratio: 1 / 1;
+  }
+  .slot .current {
+    font-size: 4vw;
+  }
+  .slot .previous {
+    font-size: calc(1vw + 0.25rem);
+  }
+  .slot .bottom-flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .work {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: work;
+  }
+  .play {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: play;
+  }
+  .study {
+    -ms-grid-row: 1;
+    -ms-grid-column: 4;
+    grid-area: study;
+  }
+  .exercise {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: exercise;
+  }
+  .social {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: social;
+  }
+  .self-care {
+    -ms-grid-row: 2;
+    -ms-grid-column: 4;
+    grid-area: self-care;
+  }
+}
+/*# sourceMappingURL=main.css.map */
